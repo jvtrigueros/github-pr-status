@@ -28,8 +28,6 @@
 (defn dev-system
   "Constructs a system map suitable for interactive development."
   []
-  (component/system-map
-   ;; TODO
-   ))
+  (component/system-map))
 
 (set-init (fn [_] (dev-system)))

@@ -1,48 +1,6 @@
 # github-pr-status
-
-TODO: Brief description
-
-
-
-## Releases and Dependency Information
-
-* Releases are published to TODO_LINK
-
-* Latest stable release is TODO_LINK
-
-* All released versions TODO_LINK
-
-[Leiningen] dependency information:
-
-    [github-pr-status "0.1.0-SNAPSHOT"]
-
-[Maven] dependency information:
-
-    <dependency>
-      <groupId>github-pr-status</groupId>
-      <artifactId>github-pr-status</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
-    </dependency>
-
-[Leiningen]: http://leiningen.org/
-[Maven]: http://maven.apache.org/
-
-
+> A program that will poll a GitHub repo, look for new pull requests, and tweet a summary of each PR to Twitter
 
 ## Usage
 
-TODO
-
-
-
-## Change Log
-
-* Version 0.1.0-SNAPSHOT
-
-
-
-## Copyright and License
-
-Copyright © 2018 TODO_INSERT_NAME
-
-TODO: [Choose a license](http://choosealicense.com/)
+    lein run
