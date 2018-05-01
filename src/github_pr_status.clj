@@ -1,3 +1,5 @@
-(ns github-pr-status)
+(ns github-pr-status
+  (:gen-class))
 
-
+(defn -main []
+  (println "hello world"))
