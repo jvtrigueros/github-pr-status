@@ -1,10 +1,10 @@
 (ns twitter.oauth
   (:require [crypto.random]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [ring.util.codec :refer [url-encode]])
   (:import (javax.crypto Mac)
            (javax.crypto.spec SecretKeySpec)
-           (org.apache.commons.codec.binary Base64)
-           (org.apache.commons.codec.net URLCodec)))
+           (org.apache.commons.codec.binary Base64)))
 
 (def signature-method "HMAC-SHA1")
 (def version "1.0")
@@ -37,13 +37,6 @@
      :oauth_token            token
      :oauth_version          version}))
 
-(defn percent-encode
-  [^String s]
-  (->> s
-       .getBytes
-       (URLCodec/encodeUrl nil)
-       String.))
-
 (defn generate-parameter-string
   [parameters]
   (let [separator "&"
@@ -51,18 +44,18 @@
     (str/join
       separator
       (map (fn [[k v]]
-             (str (-> k name percent-encode) "=" (-> v str percent-encode)))
+             (str (-> k name url-encode) "=" (-> v str url-encode)))
            sorted-parameters))))
 
 (defn generate-base-string
   [url method parameter-string]
   (let [method (-> method name str/upper-case)
-        encoded-url (percent-encode url)
-        encoded-parameter-string (percent-encode parameter-string)]
+        encoded-url (url-encode url)
+        encoded-parameter-string (url-encode parameter-string)]
     (str/join "&" [method encoded-url encoded-parameter-string])))
 
 (defn calculate-signature
   [config signature-base-string]
   (let [{:keys [consumer-secret token-secret]} config
-        key (str (percent-encode consumer-secret) "&" (percent-encode token-secret))]
+        key (str (url-encode consumer-secret) "&" (url-encode token-secret))]
     (hmac key signature-base-string)))
