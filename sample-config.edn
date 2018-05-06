@@ -1,4 +1,6 @@
-{:github  {:url ""}
+{:github  {:token      ""
+           :repository "owner/name"
+           :id         nil}
  :twitter {:consumer-key        ""
            :consumer-secret     ""
            :access-token        ""

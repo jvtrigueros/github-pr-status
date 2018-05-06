@@ -2,7 +2,8 @@
   :description "A program that will poll a GitHub repo, look for new pull requests, and tweet a summary of each PR to Twitter"
   :url "https://gitlab.com/jvtrigueros/github-pr-status"
   :license "UNLICENSED"
-  :dependencies [[com.stuartsierra/component "0.3.2"]
+  :dependencies [[cheshire "5.8.0"]
+                 [com.stuartsierra/component "0.3.2"]
                  [crypto-random "1.2.0"]
                  [http-kit "2.3.0"]
                  [org.clojure/clojure "1.8.0"]

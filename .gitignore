@@ -12,3 +12,5 @@ pom.xml.asc
 /.classpath
 .idea
 *.iml
+graphql.*.json
+config.edn

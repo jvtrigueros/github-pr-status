@@ -17,6 +17,5 @@
 (defn update-status [config status]
   (let [url "https://api.twitter.com/1.1/statuses/update.json"
         method :post
-        twitter-config (:twitter config)
         params {:status status}]
-    (oauth-request twitter-config url method params)))
+    (oauth-request config url method params)))

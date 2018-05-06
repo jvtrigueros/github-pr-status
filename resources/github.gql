@@ -1,0 +1,17 @@
+query latestPullRequests($repoOwner: String!, $repoName: String!, $next: Int, $orderDirection: OrderDirection!, $cursor: String) {
+  repository(owner: $repoOwner, name: $repoName) {
+    pullRequests(first: $next, after: $cursor ,orderBy: {field: CREATED_AT, direction: $orderDirection}) {
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      nodes {
+        number
+        id
+        title
+        body
+        url
+      }
+    }
+  }
+}
