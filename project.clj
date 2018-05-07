@@ -1,4 +1,4 @@
-(defproject github-pr-status "0.1.0-SNAPSHOT"
+(defproject github-pr-status "0.1.0"
   :description "A program that will poll a GitHub repo, look for new pull requests, and tweet a summary of each PR to Twitter"
   :url "https://gitlab.com/jvtrigueros/github-pr-status"
   :license "UNLICENSED"
