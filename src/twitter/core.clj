@@ -2,6 +2,8 @@
   (:require [org.httpkit.client :as http]
             [twitter.oauth :as oauth]))
 
+(def max-tweet-length 280)
+
 (defn oauth-request [config url method params]
   (let [unsigned-oauth (oauth/create-oauth-parameters config)
         signature (oauth/calculate-signature config

@@ -1,7 +1,7 @@
 {:github  {:token      ""
            :repository "owner/name"
            :id         nil}
- :twitter {:consumer-key        ""
-           :consumer-secret     ""
-           :access-token        ""
-           :access-token-secret ""}}
+ :twitter {:consumer-key    ""
+           :consumer-secret ""
+           :token           ""
+           :token-secret    ""}}
